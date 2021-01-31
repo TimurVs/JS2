@@ -1,30 +1,59 @@
 // *******JS2 LESSON1 Homework*******
 
+// третье задание можно сделать через join, но такой мне показался более простым, просто через forEach
+
 const products = [
     { id: 1, title: 'Notebook', price: 2000 },
-    { id: 2, title: 'Mouse', price: 500 },
-    { id: 3, title: 'Keyboard', price: 400 },
-    { id: 4, title: 'Gamepad', price: 1000 }
+    { id: 2, title: 'Mouse', price: 20 },
+    { id: 3, title: 'Keyboard', price: 200 },
+    { id: 4, title: 'Gamepad', price: 50 },
 ];
+
+const renderProduct = (products) => {
+    products.forEach((item) => {
+        document.querySelector('.products').innerHTML += `<div class="product-item">
+        <h3 style="color: brown">${item.title}</h3>
+        <p style="font-style:italic; font-size:25px;">${item.price}</p>
+        <button class="buy-btn">Купить</button>
+        </div>`
+    });
+};
+
+renderProduct(products);
+
+
+
+
+
+
+
+
+// const products = [
+//     { id: 1, title: 'Notebook', price: 2000 },
+//     { id: 2, title: 'Mouse', price: 500 },
+//     { id: 3, title: 'Keyboard', price: 400 },
+//     { id: 4, title: 'Gamepad', price: 1000 }
+// ];
 
 //Function for layout in HTML
 
-const renderProduct = (title, price) => {
-    return `
-    <div class="product_item">
-    <h3>${title}</h3>
-    <p>${price}</p>
-    <button class="buy_btn"> Buy </button>
-    </div>`
+// const renderProduct = (a) => {
+//     return `
+//     <div class="product_item">
+//     <h3 style="color: brown">${a.title}</h3>
+//     <p style="font-style:italic; font-size:25px;">${a.price}</p>
+//     <button class="buy_btn"> Buy </button>
+//     </div>`
 
-};
+// };
 
-const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item.title, item.price));
-    document.querySelector('.products').innerHTML = productsList.join('');
-};
+// const renderPage = list => {
+//     const productsList = list.map(item => renderProduct(item));
+//     document.querySelector('.products').innerHTML = productsList.join('');
+// };
 
-renderPage(products);
+// renderPage(products);
+
 
 
 
