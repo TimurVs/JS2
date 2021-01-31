@@ -156,4 +156,3 @@ renderPage(products);
 // let size = langs.map(item => item.length);
 // console.log(size);
 
-/*
